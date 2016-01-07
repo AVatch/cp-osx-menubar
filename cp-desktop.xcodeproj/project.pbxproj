@@ -12,6 +12,9 @@
 		5C40E8E51C3F19BB00320DCC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C40E8E31C3F19BB00320DCC /* MainMenu.xib */; };
 		5C40E8F01C3F19BC00320DCC /* cp_desktopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C40E8EF1C3F19BC00320DCC /* cp_desktopTests.swift */; };
 		5C40E8FB1C3F19BC00320DCC /* cp_desktopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C40E8FA1C3F19BC00320DCC /* cp_desktopUITests.swift */; };
+		5C40E9091C3F1F1900320DCC /* PasteBoardWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C40E9081C3F1F1900320DCC /* PasteBoardWatcher.swift */; };
+		5C40E90C1C3F203E00320DCC /* AppRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C40E90A1C3F203E00320DCC /* AppRootViewController.swift */; };
+		5C40E90D1C3F203E00320DCC /* AppRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C40E90B1C3F203E00320DCC /* AppRootViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +46,9 @@
 		5C40E8F61C3F19BC00320DCC /* cp-desktopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "cp-desktopUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C40E8FA1C3F19BC00320DCC /* cp_desktopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cp_desktopUITests.swift; sourceTree = "<group>"; };
 		5C40E8FC1C3F19BC00320DCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C40E9081C3F1F1900320DCC /* PasteBoardWatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasteBoardWatcher.swift; sourceTree = "<group>"; };
+		5C40E90A1C3F203E00320DCC /* AppRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRootViewController.swift; sourceTree = "<group>"; };
+		5C40E90B1C3F203E00320DCC /* AppRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppRootViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,9 +100,12 @@
 			isa = PBXGroup;
 			children = (
 				5C40E8DF1C3F19BB00320DCC /* AppDelegate.swift */,
+				5C40E90A1C3F203E00320DCC /* AppRootViewController.swift */,
+				5C40E90B1C3F203E00320DCC /* AppRootViewController.xib */,
 				5C40E8E11C3F19BB00320DCC /* Assets.xcassets */,
 				5C40E8E31C3F19BB00320DCC /* MainMenu.xib */,
 				5C40E8E61C3F19BB00320DCC /* Info.plist */,
+				5C40E9081C3F1F1900320DCC /* PasteBoardWatcher.swift */,
 			);
 			path = "cp-desktop";
 			sourceTree = "<group>";
@@ -224,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C40E8E21C3F19BB00320DCC /* Assets.xcassets in Resources */,
+				5C40E90D1C3F203E00320DCC /* AppRootViewController.xib in Resources */,
 				5C40E8E51C3F19BB00320DCC /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,7 +259,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C40E90C1C3F203E00320DCC /* AppRootViewController.swift in Sources */,
 				5C40E8E01C3F19BB00320DCC /* AppDelegate.swift in Sources */,
+				5C40E9091C3F1F1900320DCC /* PasteBoardWatcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

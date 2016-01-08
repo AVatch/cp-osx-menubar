@@ -71,24 +71,27 @@ extension AppRootViewController: NSTableViewDataSource {
 
             let snippet = self.snippets[row]
             cell.snippetTextContent.stringValue = snippet.content
-            
+
             return cell
         }
         return cell
     }
 }
 
+
 // MARK: - NSTableViewDelegate
 extension AppRootViewController: NSTableViewDelegate {
     func tableView(tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
         print("Calculating the row of the thing")
-        let coef = 1.0
+        let coef = 2.5
+        
+        let snippet = self.snippets[row]
         let cell = tableView.makeViewWithIdentifier("SnippetCellView", owner: self) as! SnippetCellView
-        print("The cell (in delegate) height is \(cell.frame.height)")
+
+        cell.snippetTextContent.stringValue = snippet.content
+        cell.snippetMultiLineLabel.sizeToFit()
         
-        let snipppetCharCount: Int = self.snippets[row].content.length
-        
-        return CGFloat(Double(snipppetCharCount) * coef )
+        return cell.snippetMultiLineLabel.frame.height * CGFloat(coef)
     }
 }
 

@@ -10,5 +10,7 @@ import Cocoa
 
 class SnippetCellView: NSView {
 
-    @IBOutlet weak var snippetTextContent: NSTextField!
+    @IBOutlet weak var snippetMultiLineLabel: NSTextField!
+    @IBOutlet weak var snippetTextContent: NSTextFieldCell!
+    
 }

@@ -16,7 +16,15 @@ protocol PasteboardWatcherDelegate {
 class PasteboardWatcher : NSObject {
     
     private let pasteboard = NSPasteboard.generalPasteboard()
+    private let notificationCenter = NSNotificationCenter.defaultCenter()
     private var changeCount : Int
+    private var latestSnippet: String {
+        didSet{
+//            self.notificationCenter.postNotification(NSNotification(name: "clipboardUpdatedNotification", object: latestSnippet))
+            self.notificationCenter.postNotificationName("clipboardUpdatedNotification", object: nil, userInfo: ["snippet": latestSnippet])
+        }
+    }
+
     private var timer: NSTimer?
     
     var delegate: PasteboardWatcherDelegate?
@@ -28,7 +36,7 @@ class PasteboardWatcher : NSObject {
     init(fileKinds: [String]){
         changeCount = pasteboard.changeCount
         self.fileKinds = fileKinds
-        
+        self.latestSnippet = ""
         self.snippets = []
         
         super.init()
@@ -44,13 +52,12 @@ class PasteboardWatcher : NSObject {
         // check if there is any new item copied
         // also check if kind of copied item is string
         if let copiedString = pasteboard.stringForType(NSPasteboardTypeString) where pasteboard.changeCount != changeCount {
-            print("New String Found: ")
-            print(copiedString)
             
             // obtain string from copied link if its path extension is one of desired extensions
             self.delegate?.newlyCopiedStringObtained(copiedString: copiedString)
             
             self.snippets.append(copiedString)
+            self.latestSnippet = copiedString
             
             // assign new change count to instance variable for later comparison
             changeCount = pasteboard.changeCount

@@ -23,7 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             button.action = Selector("togglePopover:")
         }
         
-        popover.contentViewController = AppRootViewController(nibName: "AppRootViewController", bundle: nil)
+        self.popover.contentViewController = AppRootViewController(nibName: "AppRootViewController", bundle: nil)
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {

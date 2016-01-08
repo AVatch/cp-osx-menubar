@@ -16,8 +16,8 @@
 		5C40E90C1C3F203E00320DCC /* AppRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C40E90A1C3F203E00320DCC /* AppRootViewController.swift */; };
 		5C40E90D1C3F203E00320DCC /* AppRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C40E90B1C3F203E00320DCC /* AppRootViewController.xib */; };
 		5C40E9131C40101300320DCC /* Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C40E9121C40101300320DCC /* Snippet.swift */; };
-		5C40E9181C40334700320DCC /* SnippetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C40E9161C40334700320DCC /* SnippetViewController.swift */; };
-		5C40E9191C40334700320DCC /* SnippetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C40E9171C40334700320DCC /* SnippetViewController.xib */; };
+		5C40E91B1C40367500320DCC /* SnippetCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C40E91A1C40367500320DCC /* SnippetCellView.xib */; };
+		5C40E91D1C40371400320DCC /* SnippetCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C40E91C1C40371400320DCC /* SnippetCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,8 +53,8 @@
 		5C40E90A1C3F203E00320DCC /* AppRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRootViewController.swift; sourceTree = "<group>"; };
 		5C40E90B1C3F203E00320DCC /* AppRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppRootViewController.xib; sourceTree = "<group>"; };
 		5C40E9121C40101300320DCC /* Snippet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snippet.swift; sourceTree = "<group>"; };
-		5C40E9161C40334700320DCC /* SnippetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnippetViewController.swift; sourceTree = "<group>"; };
-		5C40E9171C40334700320DCC /* SnippetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SnippetViewController.xib; sourceTree = "<group>"; };
+		5C40E91A1C40367500320DCC /* SnippetCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SnippetCellView.xib; path = ../SnippetCellView.xib; sourceTree = "<group>"; };
+		5C40E91C1C40371400320DCC /* SnippetCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnippetCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +105,7 @@
 		5C40E8DE1C3F19BB00320DCC /* cp-desktop */ = {
 			isa = PBXGroup;
 			children = (
+				5C40E91A1C40367500320DCC /* SnippetCellView.xib */,
 				5C40E8DF1C3F19BB00320DCC /* AppDelegate.swift */,
 				5C40E90A1C3F203E00320DCC /* AppRootViewController.swift */,
 				5C40E90B1C3F203E00320DCC /* AppRootViewController.xib */,
@@ -113,8 +114,7 @@
 				5C40E8E61C3F19BB00320DCC /* Info.plist */,
 				5C40E9081C3F1F1900320DCC /* PasteBoardWatcher.swift */,
 				5C40E9121C40101300320DCC /* Snippet.swift */,
-				5C40E9161C40334700320DCC /* SnippetViewController.swift */,
-				5C40E9171C40334700320DCC /* SnippetViewController.xib */,
+				5C40E91C1C40371400320DCC /* SnippetCellView.swift */,
 			);
 			path = "cp-desktop";
 			sourceTree = "<group>";
@@ -241,9 +241,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C40E9191C40334700320DCC /* SnippetViewController.xib in Resources */,
 				5C40E8E21C3F19BB00320DCC /* Assets.xcassets in Resources */,
 				5C40E90D1C3F203E00320DCC /* AppRootViewController.xib in Resources */,
+				5C40E91B1C40367500320DCC /* SnippetCellView.xib in Resources */,
 				5C40E8E51C3F19BB00320DCC /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,10 +269,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C40E9181C40334700320DCC /* SnippetViewController.swift in Sources */,
 				5C40E90C1C3F203E00320DCC /* AppRootViewController.swift in Sources */,
 				5C40E8E01C3F19BB00320DCC /* AppDelegate.swift in Sources */,
 				5C40E9091C3F1F1900320DCC /* PasteBoardWatcher.swift in Sources */,
+				5C40E91D1C40371400320DCC /* SnippetCellView.swift in Sources */,
 				5C40E9131C40101300320DCC /* Snippet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,5 +1,5 @@
 //
-//  SnippetViewController.swift
+//  SnippetCellView.swift
 //  cp-desktop
 //
 //  Created by Adrian Vatchinsky on 1/8/16.
@@ -8,12 +8,7 @@
 
 import Cocoa
 
-class SnippetViewController: NSViewController {
+class SnippetCellView: NSView {
 
     @IBOutlet weak var snippetTextContent: NSTextField!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do view setup here.
-    }
-    
 }

@@ -27,11 +27,19 @@ class AppRootViewController: NSViewController {
         initSnippets()
         
         self.view.setFrameSize(NSSize(width: 350, height: 500))
+
+        
+        let nib = NSNib(nibNamed: "SnippetCellView", bundle: NSBundle.mainBundle())
+        snippetTableView.registerNib(nib!, forIdentifier: "SnippetCellView")
+        
         
         let watcher = PasteboardWatcher(fileKinds: ["String"])
         watcher.startPolling()
         
         self.notificationCenter.addObserver(self, selector: "updateCurrentClipboardItem:", name: "clipboardUpdatedNotification", object: nil)
+        
+        
+        
         
     }
     
@@ -57,17 +65,15 @@ extension AppRootViewController: NSTableViewDataSource {
     }
     
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        let cellView: NSTableCellView = tableView.makeViewWithIdentifier(tableColumn!.identifier, owner: self) as! NSTableCellView
-    
-        if tableColumn!.identifier == "SnippetColumn" {
-            // 3
-            let snippet = self.snippets[row]
-            cellView.textField!.stringValue = snippet.content
+        let cell = tableView.makeViewWithIdentifier("SnippetCellView", owner: self) as! SnippetCellView
 
-            return cellView
+        if tableColumn!.identifier == "SnippetColumn" {
+
+            let snippet = self.snippets[row]
+            cell.snippetTextContent.stringValue = snippet.content
+            return cell
         }
-        
-        return cellView
+        return cell
     }
 }
 

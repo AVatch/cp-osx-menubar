@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="UD0-Lq-C9A" userLabel="CellView" customClass="SnippetCellView" customModule="cp_desktop" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="405" height="37"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="qsz-FD-KYd">
+                    <rect key="frame" x="3" y="15" width="399" height="17"/>
+                    <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Multiline Label" id="01g-yB-1oK">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="qsz-FD-KYd" secondAttribute="trailing" constant="5" id="0Zn-sy-X30"/>
+                <constraint firstItem="qsz-FD-KYd" firstAttribute="centerX" secondItem="UD0-Lq-C9A" secondAttribute="centerX" id="LpO-U2-Z7x"/>
+                <constraint firstItem="qsz-FD-KYd" firstAttribute="leading" secondItem="UD0-Lq-C9A" secondAttribute="leading" constant="5" id="XL7-J1-5pD"/>
+                <constraint firstItem="qsz-FD-KYd" firstAttribute="top" secondItem="UD0-Lq-C9A" secondAttribute="top" constant="5" id="rE9-oN-TWp"/>
+                <constraint firstAttribute="bottom" secondItem="qsz-FD-KYd" secondAttribute="bottom" constant="15" id="uQE-wU-TJn"/>
+            </constraints>
+            <connections>
+                <outlet property="snippetTextContent" destination="qsz-FD-KYd" id="Sz7-Ld-39C"/>
+            </connections>
+            <point key="canvasLocation" x="488.5" y="224"/>
+        </customView>
+    </objects>
+</document>

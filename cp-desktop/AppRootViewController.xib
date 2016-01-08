@@ -7,6 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="AppRootViewController" customModule="cp_desktop" customModuleProvider="target">
             <connections>
+                <outlet property="snippetTableView" destination="jZT-zV-4jq" id="8CE-UG-nVc"/>
                 <outlet property="textView" destination="NuZ-SM-n7e" id="5GX-c5-M2Z"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
@@ -102,11 +103,11 @@
                                         </textFieldCell>
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         <prototypeCellViews>
-                                            <tableCellView id="fHV-jz-7EF">
+                                            <tableCellView misplaced="YES" id="fHV-jz-7EF">
                                                 <rect key="frame" x="1" y="1" width="445" height="75"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xzr-L5-xJM">
+                                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xzr-L5-xJM">
                                                         <rect key="frame" x="0.0" y="58" width="100" height="17"/>
                                                         <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="l4Z-gR-ttO">
                                                             <font key="font" metaFont="system"/>
@@ -115,6 +116,12 @@
                                                         </textFieldCell>
                                                     </textField>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="xzr-L5-xJM" secondAttribute="bottom" constant="5" id="96D-gp-fVQ"/>
+                                                    <constraint firstItem="xzr-L5-xJM" firstAttribute="top" secondItem="fHV-jz-7EF" secondAttribute="top" constant="5" id="Ldn-3C-Ly6"/>
+                                                    <constraint firstAttribute="trailing" secondItem="xzr-L5-xJM" secondAttribute="trailing" constant="5" id="hcc-x1-OpG"/>
+                                                    <constraint firstItem="xzr-L5-xJM" firstAttribute="leading" secondItem="fHV-jz-7EF" secondAttribute="leading" constant="5" id="pgR-1y-11O"/>
+                                                </constraints>
                                                 <connections>
                                                     <outlet property="textField" destination="xzr-L5-xJM" id="kGZ-QH-yRk"/>
                                                 </connections>

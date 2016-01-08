@@ -14,6 +14,9 @@ class AppRootViewController: NSViewController {
     
     private let notificationCenter = NSNotificationCenter.defaultCenter()
     
+    @IBOutlet weak var snippetTableView: NSTableView!
+    
+    
     var snippets = [Snippet]()
     
     
@@ -36,17 +39,13 @@ class AppRootViewController: NSViewController {
         self.textView.string = notification.userInfo!["snippet"] as? String
         
         let snippet = Snippet(content: notification.userInfo!["snippet"] as! String)
-        snippets.append(snippet)
+        self.snippets.insert(snippet, atIndex: 0)
+        self.snippetTableView.insertRowsAtIndexes(NSIndexSet(index: 0), withAnimation: NSTableViewAnimationOptions.EffectGap)
     }
     
     
     func initSnippets(){
         // TODO
-        let a : Snippet = Snippet(content: "Snippet 01")
-        let b : Snippet = Snippet(content: "Snippet 03")
-        let c : Snippet = Snippet(content: "Snippet 02")
-        
-        snippets = [a, b, c]
     }
     
 }
@@ -64,6 +63,7 @@ extension AppRootViewController: NSTableViewDataSource {
             // 3
             let snippet = self.snippets[row]
             cellView.textField!.stringValue = snippet.content
+
             return cellView
         }
         

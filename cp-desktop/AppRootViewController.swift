@@ -21,6 +21,8 @@ class AppRootViewController: NSViewController {
         super.viewDidLoad()
         // Do view setup here.
         
+        initSnippets()
+        
         self.view.setFrameSize(NSSize(width: 350, height: 500))
         
         let watcher = PasteboardWatcher(fileKinds: ["String"])
@@ -31,16 +33,44 @@ class AppRootViewController: NSViewController {
     }
     
     func updateCurrentClipboardItem(notification: NSNotification){
-        print("NOTIFIED")
-        print(notification.userInfo!["snippet"])
         self.textView.string = notification.userInfo!["snippet"] as? String
+        
+        let snippet = Snippet(content: notification.userInfo!["snippet"] as! String)
+        snippets.append(snippet)
     }
     
     
     func initSnippets(){
-        let x = Snippet(content: "Hello World")
-        snippets.append(x)
+        // TODO
+        let a : Snippet = Snippet(content: "Snippet 01")
+        let b : Snippet = Snippet(content: "Snippet 03")
+        let c : Snippet = Snippet(content: "Snippet 02")
+        
+        snippets = [a, b, c]
     }
     
+}
+
+// MARK: - NSTableViewDataSource
+extension AppRootViewController: NSTableViewDataSource {
+    func numberOfRowsInTableView(aTableView: NSTableView) -> Int {
+        return self.snippets.count
+    }
     
+    func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
+        let cellView: NSTableCellView = tableView.makeViewWithIdentifier(tableColumn!.identifier, owner: self) as! NSTableCellView
+    
+        if tableColumn!.identifier == "SnippetColumn" {
+            // 3
+            let snippet = self.snippets[row]
+            cellView.textField!.stringValue = snippet.content
+            return cellView
+        }
+        
+        return cellView
+    }
+}
+
+// MARK: - NSTableViewDelegate
+extension AppRootViewController: NSTableViewDelegate {
 }

@@ -62,16 +62,16 @@
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <font key="titleFont" metaFont="system"/>
                 </box>
-                <box verticalHuggingPriority="750" misplaced="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="bHh-hS-e5Q">
+                <box verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="bHh-hS-e5Q">
                     <rect key="frame" x="293" y="117" width="172" height="5"/>
                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <font key="titleFont" metaFont="system"/>
                 </box>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9hK-8z-NVh">
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9hK-8z-NVh">
                     <rect key="frame" x="195" y="113" width="90" height="13"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Personal Clipboard" id="iKh-Lp-nZR">
-                        <font key="font" metaFont="system" size="9"/>
+                        <font key="font" metaFont="miniSystem"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -88,8 +88,6 @@
                 <constraint firstItem="9hK-8z-NVh" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="aYN-K1-hab"/>
                 <constraint firstAttribute="trailing" secondItem="y36-BV-zye" secondAttribute="trailing" constant="15" id="atP-jL-feW"/>
                 <constraint firstItem="y36-BV-zye" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="hPm-Jw-vLG"/>
-                <constraint firstItem="9hK-8z-NVh" firstAttribute="top" secondItem="NuZ-SM-n7e" secondAttribute="bottom" constant="13" id="iVp-W7-YVI"/>
-                <constraint firstItem="bHh-hS-e5Q" firstAttribute="top" secondItem="NuZ-SM-n7e" secondAttribute="bottom" constant="20" id="jae-mx-sUZ"/>
                 <constraint firstItem="9hK-8z-NVh" firstAttribute="leading" secondItem="Y1G-a0-ui4" secondAttribute="trailing" constant="10" id="qg1-Ys-Lp6"/>
                 <constraint firstItem="y36-BV-zye" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="15" id="sCE-6A-xqb"/>
             </constraints>

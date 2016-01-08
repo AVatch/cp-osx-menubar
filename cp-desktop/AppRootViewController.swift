@@ -14,6 +14,8 @@ class AppRootViewController: NSViewController {
     
     private let notificationCenter = NSNotificationCenter.defaultCenter()
     
+    var snippets = [Snippet]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,5 +35,12 @@ class AppRootViewController: NSViewController {
         print(notification.userInfo!["snippet"])
         self.textView.string = notification.userInfo!["snippet"] as? String
     }
+    
+    
+    func initSnippets(){
+        let x = Snippet(content: "Hello World")
+        snippets.append(x)
+    }
+    
     
 }

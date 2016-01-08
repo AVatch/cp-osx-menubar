@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import AppKit
 
 class AppRootViewController: NSViewController {
     
@@ -27,7 +28,6 @@ class AppRootViewController: NSViewController {
         initSnippets()
         
         self.view.setFrameSize(NSSize(width: 350, height: 500))
-
         
         let nib = NSNib(nibNamed: "SnippetCellView", bundle: NSBundle.mainBundle())
         snippetTableView.registerNib(nib!, forIdentifier: "SnippetCellView")
@@ -37,9 +37,7 @@ class AppRootViewController: NSViewController {
         watcher.startPolling()
         
         self.notificationCenter.addObserver(self, selector: "updateCurrentClipboardItem:", name: "clipboardUpdatedNotification", object: nil)
-        
-        
-        
+
         
     }
     
@@ -65,12 +63,15 @@ extension AppRootViewController: NSTableViewDataSource {
     }
     
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
+        
         let cell = tableView.makeViewWithIdentifier("SnippetCellView", owner: self) as! SnippetCellView
 
+        
         if tableColumn!.identifier == "SnippetColumn" {
 
             let snippet = self.snippets[row]
             cell.snippetTextContent.stringValue = snippet.content
+            
             return cell
         }
         return cell
@@ -79,4 +80,21 @@ extension AppRootViewController: NSTableViewDataSource {
 
 // MARK: - NSTableViewDelegate
 extension AppRootViewController: NSTableViewDelegate {
+    func tableView(tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
+        print("Calculating the row of the thing")
+        let coef = 1.0
+        let cell = tableView.makeViewWithIdentifier("SnippetCellView", owner: self) as! SnippetCellView
+        print("The cell (in delegate) height is \(cell.frame.height)")
+        
+        let snipppetCharCount: Int = self.snippets[row].content.length
+        
+        return CGFloat(Double(snipppetCharCount) * coef )
+    }
+}
+
+
+extension String {
+    var length: Int {
+        return characters.count
+    }
 }
